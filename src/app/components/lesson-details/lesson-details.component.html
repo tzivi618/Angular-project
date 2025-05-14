@@ -1,7 +1,10 @@
-
-<h2 mat-dialog-title>Dialog with elements</h2>
-<mat-dialog-content>This dialog showcases the title, close, content and actions elements.</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-
-</mat-dialog-actions>
+<h2 mat-dialog-title>שיעור {{myCourse?.name}}</h2>
+<mat-dialog-content>
+  <mat-dialog-content>
+    <p>יתקיים ביום {{myCourse?.dayOfWeek}} <br>בשעה {{myCourse?.startTime}} <br>עם המדריכה {{teacherName}}</p>
+    <p>מספר המפגשים {{myCourse?.numberOFlessons}}</p>
+    <p>תאריך התחלת הקורס {{myCourse?.startDate}}</p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>סגור</button>
+  </mat-dialog-actions>

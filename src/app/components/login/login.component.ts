@@ -51,7 +51,7 @@ export class LoginComponent {
     if (team) {
       if (team.role == Role.TEACHER) {
         console.log("teacher name" + team.firstName);
-        this.router.navigate(['/lessons', { teacherId: team.id }]);
+        this.router.navigate(['/lessons']);
       }
       else if (team.role == Role.SECRETARY) {
         console.log("secretary name" + team.firstName);

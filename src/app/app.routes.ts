@@ -9,8 +9,7 @@ import { InvalidPageComponent } from './components/invalid-page/invalid-page.com
 export const routes: Routes = [
     { path: '', component: LoginComponent },
     {path: 'login', component: LoginComponent},
-    // {path:'**', redirectTo: '', pathMatch: 'full' },
     {path:'participant',component:ParticipantComponent},
-    {path:'lessons/:teacherId',component:LessonsComponent},
+    {path:'lessons',component:LessonsComponent},
     {path:'**',component:InvalidPageComponent},
 ];
