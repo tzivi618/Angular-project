@@ -36,4 +36,21 @@ export class TeamService {
     console.log('login', email,' ',password);
     return this.teamData.find(t => t.email === email && t.password === password);
   }
+
+  getTeamById(id: number): Team | undefined {
+    return this.teamData.find(t => t.id === id);
+  }
+  getAllTeams(): Team[] {
+    return this.teamData;
+  }
+  getSecretaries(): Team[] {
+    return this.teamData.filter(t => t.role === Role.SECRETARY);
+  }
+  getTeachers():Team[]{
+    return this.teamData.filter(t=>t.role===Role.TEACHER);
+  }
+  getTeamNameById(id:number):string|undefined{
+    let team: any = this.teamData.find(t => t.id === id);
+    return team ? team.firstName + " " + team.lastName : undefined;
+  }
 }

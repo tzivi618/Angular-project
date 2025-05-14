@@ -1,0 +1,13 @@
+.ag-grid-table {
+    width: 95vw;
+    direction: rtl;
+    height: 80vh;
+    margin: auto;
+
+}
+
+div {
+    text-align: center;
+    position: relative;
+    height: 80vh;
+}
