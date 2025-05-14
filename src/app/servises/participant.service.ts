@@ -17,6 +17,7 @@ export class ParticipantService {
     new Participant('דבורה', 'פרידמן', '050-3344556', 7, 80, false, 'dvorah@gmail.com', 'password7'),
     new Participant('יהודית', 'רוזנברג', '052-6677889', 8, 110, true, 'yehudith@gmail.com', 'password8'),
     new Participant('שושנה', 'הרשקוביץ', '054-2244668', 9, 70, true, 'shoshana@gmail.com', 'password9'),
+
     new Participant('חיה', 'בלוך', '053-9988776',  10, 130, false, 'chaya@gmail.com', 'password10'),
     new Participant('מיכל', 'כץ', '050-1122113', 11, 100, true, 'michal@gmail.com', 'password11'),
     new Participant('רות', 'גולדשטיין', '052-3344556',  12, 120, true, 'ruth@gmail.com', 'password12'),
@@ -35,6 +36,7 @@ export class ParticipantService {
     new Participant('רחל', 'שטרן', '054-6677889',  25, 130, true, 'rachel@gmail.com', 'password25'),
     new Participant('חני', 'גולדמן', '053-1122334',  26, 115, true, 'hani@gmail.com', 'password26'),
     new Participant('ציפי', 'אדלר', '050-2244668',  27, 120, false, 'tzipi@gmail.com', 'password27'),
+
     new Participant('ברכה', 'לנדאו', '052-5566778', 28, 105, true, 'bracha@gmail.com', 'password28'),
     new Participant('אסנת', 'שפיגל', '054-9988776', 29, 110, true, 'asnat@gmail.com', 'password29'),
     new Participant('אורה', 'ברנשטיין', '053-3344556', 30, 140, false, 'ora@gmail.com', 'password30'),
@@ -42,10 +44,11 @@ export class ParticipantService {
 
   getParticipants(): Participant[] {
     return this.participants;
-  }
+
   
   // getPaticipantsByEmail(Email: string): Participant | undefined {
   //   return this.participants.find(p => p.email === Email);
   // }
+
 }
 

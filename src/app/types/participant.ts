@@ -12,6 +12,7 @@ export class Participant {
     public email: string,
     public password: string,
     
+
   ) { }
 }
 
