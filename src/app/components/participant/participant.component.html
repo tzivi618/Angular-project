@@ -1,10 +1,15 @@
 
-<p>participant works!</p>
 
-<p>רשימת המשתתפות</p>
+<h2>רשימת הנרשמות</h2>
 
 
 `<!-- The AG Grid component -->
-    <ag-grid-angular style="height: 80vh;; width: 95vw;"
+    <div style="">
+        <ag-grid-angular style="height: 80vh; width: 95vw; margin: auto;"
         [rowData]="rowData"
-        [columnDefs]="colDefs" />
+        [columnDefs]="colDefs" 
+        [pagination]="true"
+        [paginationPageSizeSelector]="[10,20,50]"
+        [paginationPageSize]="10"
+        [gridOptions]="gridOptions"/>
+    </div>

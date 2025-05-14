@@ -37,6 +37,6 @@ export class TeamService {
   login(email: string, password: string): Team | undefined {
     console.log('login', email,' ',password);
     return this.teamData.find(t => t.email === email && t.password === password);
->>>>>>> b18900b44a5f98bfd83810129891bab390e06c60
+
   }
 }

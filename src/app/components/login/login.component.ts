@@ -8,12 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TeamService } from '../../servises/team.service';
 import { Router, RouterModule } from '@angular/router';
-<<<<<<< HEAD
-import { Role } from '../../types/team';
 
-=======
+
 import { Role } from '../../types/role';
->>>>>>> b18900b44a5f98bfd83810129891bab390e06c60
 @Component({
   selector: 'app-login',
   standalone: true,

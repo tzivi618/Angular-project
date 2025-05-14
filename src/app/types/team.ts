@@ -12,3 +12,5 @@ export class Team{
         public role: Role,
     ) { }
 }
+
+export { Role };
