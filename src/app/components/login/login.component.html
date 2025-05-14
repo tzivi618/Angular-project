@@ -1,0 +1,25 @@
+<h2>התחברות</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" width>
+    <mat-form-field appearance="fill">
+      <mat-label>אימייל</mat-label>
+      <input matInput formControlName="email" required>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+        אימייל הוא שדה חובה
+      </mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+        אימייל לא תקין
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>סיסמה</mat-label>
+      <input matInput type="password" formControlName="password" required>
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')" >
+        סיסמה היא שדה חובה
+      </mat-error>
+      <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+        סיסמה חייבת להיות לפחות 6 תווים
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">התחבר</button>
+</form>
