@@ -1,10 +1,15 @@
-<div>
-    <h2>רשימת הנרשמות לקורסים</h2>
-    <ag-grid-angular class="ag-grid-table" 
-    [rowData]="rowData"
-     [columnDefs]="colDefs"
-     [pagination]="true"
-     [paginationPageSizeSelector]="[10,20,50]"
-     [paginationPageSize]="10"
-     [gridOptions]="gridOptions" />
-</div>
+
+
+<h2>רשימת הנרשמות</h2>
+
+
+`<!-- The AG Grid component -->
+    <div >
+        <ag-grid-angular style="height: 80vh; width: 95vw; margin: auto;"
+        [rowData]="rowData"
+        [columnDefs]="colDefs" 
+        [pagination]="true"
+        [paginationPageSizeSelector]="[10,20,50]"
+        [paginationPageSize]="10"
+        [gridOptions]="gridOptions"/>
+    </div>

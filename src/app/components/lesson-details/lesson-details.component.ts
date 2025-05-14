@@ -1,5 +1,7 @@
+
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+
 import {
   MatDialog,
   MatDialogActions,
@@ -7,6 +9,7 @@ import {
   MatDialogContent,
   MatDialogTitle,
 } from '@angular/material/dialog';
+
 import { Participant } from '../../types/participant';
 import { Course } from '../../types/course';
 import { CourseService } from '../../servises/course.service';

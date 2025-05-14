@@ -1,3 +1,4 @@
+
 import { Role } from "./role";
 
 export class Team{
@@ -11,3 +12,5 @@ export class Team{
         public role: Role,
     ) { }
 }
+
+export { Role };

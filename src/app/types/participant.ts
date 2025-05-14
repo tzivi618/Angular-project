@@ -1,4 +1,7 @@
 export class Participant {
+  getParticipants(): Participant[] {
+    throw new Error('Method not implemented.');
+  }
   constructor(
     public firstName: string,
     public lastName: string,
@@ -7,7 +10,9 @@ export class Participant {
     public price: number,
     public isPaid: boolean,
     public email: string,
-    public password: string
+    public password: string,
+    
+
   ) { }
 }
 

@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TeamService } from '../../servises/team.service';
 import { Router, RouterModule } from '@angular/router';
+
+
 import { Role } from '../../types/role';
 @Component({
   selector: 'app-login',
@@ -29,13 +31,16 @@ export class LoginComponent {
 
   loginForm: FormGroup;
 
+
   constructor(private formBuilder: FormBuilder, public teamList: TeamService, public router: Router) {
+
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
   ngOnInit(): void { }
+
   onSubmitLogin() {
     if (this.loginForm.invalid) {
       alert('יש למלא את כל השדות בצורה תקינה');
@@ -58,3 +63,4 @@ export class LoginComponent {
     }
   }
 }
+
