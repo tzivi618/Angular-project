@@ -31,13 +31,12 @@ export class TeamService {
     new Team("דינה", "שוורץ", 17, "0507890124", "dina.schwartz@gmail.com", "Dina414!", Role.TEACHER),
     new Team("רבקה", "יעקב", 18, "0508901235", "rivka.jacob@gmail.com", "Rivka515!", Role.SECRETARY),
     new Team("שרה", "לוי", 19, "0509012346", "sara.levi@gmail.com", "Sara616!", Role.SECRETARY),
-    new Team("חנה", "כהן", 20, "0500123457", "hana.cohen@gmail.com", "Hana717!", Role.SECRETARY),
+    new Team("חנה", "כהן", 20, "0500123457", "g@gmail.com", "123456", Role.SECRETARY),
   ];
 
   login(email: string, password: string): Team | undefined {
     console.log('login', email,' ',password);
     return this.teamData.find(t => t.email === email && t.password === password);
-
   }
 
   getTeamById(id: number): Team | undefined {

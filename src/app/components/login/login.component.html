@@ -1,6 +1,6 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
   <mat-form-field appearance="fill">
-    <mat-label>אימייל</mat-label>
+    <mat-label>אימייל  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="email"></mat-icon>    </mat-label>
     <input matInput formControlName="email" required>
     <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
       אימייל הוא שדה חובה
@@ -9,9 +9,9 @@
       אימייל לא תקין
     </mat-error>
   </mat-form-field>
-
   <mat-form-field appearance="fill">
-    <mat-label>סיסמה</mat-label>
+    <mat-label>סיסמא <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="lock"></mat-icon>
+    </mat-label>
     <input matInput type="password" formControlName="password" required>
     <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
       סיסמה היא שדה חובה

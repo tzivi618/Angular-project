@@ -1,5 +1,5 @@
 
-import { ChangeDetectionStrategy, Component, Inject, inject, OnInit } from '@angular/core';
+import { Component, Inject, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import {
@@ -11,7 +11,6 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 
-import { Participant } from '../../types/participant';
 import { Course } from '../../types/course';
 import { CourseService } from '../../servises/course.service';
 import { TeamService } from '../../servises/team.service';
@@ -28,26 +27,26 @@ export class DialogElementsExample {
 export class LessonDetailsComponent implements OnInit {
   lessonID!: number;
   detail!: string;
-  myCourse!: Course|undefined;
-  teacherName!: string|undefined;
-error: any;
-  constructor(public courses: CourseService, public teachers: TeamService, @Inject(MAT_DIALOG_DATA) public data: { lessonNumber: number }) {}
+  myCourse!: Course | undefined;
+  teacherName!: string | undefined;
+  error: any;
+  constructor(public courses: CourseService, public teachers: TeamService, @Inject(MAT_DIALOG_DATA) public data: { lessonNumber: number }) { }
 
   ngOnInit(): void {
 
     this.lessonID = this.data.lessonNumber;
     console.log('Lesson ID:', this.lessonID);
     this.myCourse = this.courses.getCourseById(this.lessonID);
-     if (!this.myCourse) {
+    if (!this.myCourse) {
       alert("שגיאה במערכת");
-      this.error=true;
+      this.error = true;
       return;
     }
     this.teacherName = this.teachers.getTeamNameById(this.myCourse.teacherID);
     if (!this.teacherName) {
       alert("שגיאה במערכת");
-      this.error=true;
+      this.error = true;
       return;
     }
-   }
+  }
 }
