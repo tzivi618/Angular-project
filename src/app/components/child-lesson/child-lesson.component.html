@@ -1,0 +1,9 @@
+<div id="lesson-details"
+    [ngClass]="{'lesson-has-begun':  courseDetails.startDate.getTime() < today, 'a':true}">
+    <h1>{{courseDetails.name}}</h1>
+    <h3>{{courseDetails.description}}</h3>
+    <p>יתקיים בימי {{courseDetails.dayOfWeek}} <br>בשעה {{courseDetails.startTime}}</p>
+    <p>מספר המפגשים: {{courseDetails.numberOFlessons}}</p>
+    <p>התחלת הקורס ב {{transformDate(courseDetails.startDate )}}</p>
+    <p>מחיר: {{courseDetails.price | currency:'ILS':'symbol'}}</p>
+</div>

@@ -1,8 +1,9 @@
 
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { Component, Inject, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
 import {
+  MAT_DIALOG_DATA,
   MatDialog,
   MatDialogActions,
   MatDialogClose,
@@ -10,16 +11,11 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 
-import { Participant } from '../../types/participant';
 import { Course } from '../../types/course';
 import { CourseService } from '../../servises/course.service';
 import { TeamService } from '../../servises/team.service';
 export class DialogElementsExample {
   readonly dialog = inject(MatDialog);
-
-  // openDialog() {
-  //   this.dialog.open(DialogElementsExampleDialog);
-  // }
 }
 @Component({
   selector: 'app-lesson-details',
@@ -29,19 +25,28 @@ export class DialogElementsExample {
   styleUrl: './lesson-details.component.css'
 })
 export class LessonDetailsComponent implements OnInit {
-  lessonID: number = 0;
-  constructor(public courses: CourseService, public teachers: TeamService) {
+  lessonID!: number;
+  detail!: string;
+  myCourse!: Course | undefined;
+  teacherName!: string | undefined;
+  error: any;
+  constructor(public courses: CourseService, public teachers: TeamService, @Inject(MAT_DIALOG_DATA) public data: { lessonNumber: number }) { }
 
-  }
-  ngOnInit(): void { }
-  onClick() {
-    let MyCourse: any = this.courses.getCourseById(this.lessonID);
-    let teamName:any = this.teachers.getTeamNameById(MyCourse.teacherID);
-    if (!teamName) {
+  ngOnInit(): void {
+
+    this.lessonID = this.data.lessonNumber;
+    console.log('Lesson ID:', this.lessonID);
+    this.myCourse = this.courses.getCourseById(this.lessonID);
+    if (!this.myCourse) {
       alert("שגיאה במערכת");
+      this.error = true;
       return;
     }
-    alert("שיעור " + MyCourse.name + " יתקיים ביום " + MyCourse.dayOfWeek + " בשעה " + MyCourse.startTime + " עם המדריך " + teamName);
+    this.teacherName = this.teachers.getTeamNameById(this.myCourse.teacherID);
+    if (!this.teacherName) {
+      alert("שגיאה במערכת");
+      this.error = true;
+      return;
+    }
   }
-
 }

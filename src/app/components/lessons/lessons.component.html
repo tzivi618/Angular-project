@@ -1,1 +1,4 @@
-<p>lessons works!</p>
+<h1>כל השיעורים</h1>
+<div id="lessons-container">
+<app-child-lesson *ngFor="let cource of allCourses" [courseDetails]="cource"></app-child-lesson>
+</div>

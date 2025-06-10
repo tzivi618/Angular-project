@@ -21,7 +21,8 @@ import { Role } from '../../types/role';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
@@ -46,20 +47,24 @@ export class LoginComponent {
       alert('יש למלא את כל השדות בצורה תקינה');
       return;
     }
-    console.log(this.loginForm.value.email);
     let team: any = this.teamList.login(this.loginForm.value.email, this.loginForm.value.password);
     if (team) {
+      alert('ברוך הבא ' + team.firstName + ' ' + team.lastName);
       if (team.role == Role.TEACHER) {
-        console.log("teacher name" + team.firstName);
-        this.router.navigate(['/lessons', { teacherId: team.id }]);
+        sessionStorage.setItem('isTeacherMayEnter', 'true');
+        this.router.navigate(['/lessons']);
       }
       else if (team.role == Role.SECRETARY) {
-        console.log("secretary name" + team.firstName);
+        sessionStorage.setItem('isSecretaryMayEnter', 'true');
         this.router.navigate(['/participant']);
       }
       else {
         alert('אימייל או סיסמא לא נכונים');
       }
+      // clean the failds
+    }
+    else{
+      alert("שגיאה");
     }
   }
 }

@@ -28,18 +28,22 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 })
 export class ParticipantComponent implements OnInit {
   rowData: Participant[] = [];
-  constructor(private participantService: ParticipantService) { }
+  constructor(private participantService: ParticipantService, private dialog: MatDialog) { }
   paginationAutoPageSize = true;
   gridOptions = {
     enableRtl: true,
     localeText: localeTextHE
-
   }
   ngOnInit(): void {
     this.rowData = this.participantService.getParticipants();
   }
   openDialog(params: any): void {
-    this.dialog.open(LessonDetailsComponent);
+    this.dialog.open(LessonDetailsComponent,{
+      data: { lessonNumber: params.data.lessonNumber },
+      width: '500px', 
+      height: '400px',
+      direction: 'rtl'
+    });
   }
   colDefs: ColDef[] = [
     { field: "firstName", headerName: "שם פרטי", filter: "agTextColumnFilter" },
@@ -47,33 +51,13 @@ export class ParticipantComponent implements OnInit {
     { field: "phone", headerName: "טלפון", filter: "agTextColumnFilter" },
     {
       field: "lessonNumber", headerName: "מספר שיעור", filter: "number",
-      cellRenderer: (params: any) => { return 'פרטי השיעור' }, 
-      // onCellClicked: (params: any) => {
-      //   alert("פרטי השיעור");
-      //   this. dialog = inject(MatDialog);
-      //   this. dialog.open(LessonDetailsComponent);}
-    
+      cellRenderer: (params: any) => { return 'פרטי השיעור' },
       onCellClicked: (params: any) => this.openDialog(params)
-  } 
-  ,
-{ field: "price", headerName: "מחיר", filter: "number" },
-{ field: "isPaid", headerName: "שולם", "filter": "agSetColumnFilter" },
-{ field: "email", headerName: "אימייל", filter: "agTextColumnFilter" },
-    { field: "firstName", headerName: "שם פרטי", filter: 'agTextColumnFilter' },
-    { field: "lastName", headerName: "שם משפחה", filter: 'agTextColumnFilter' },
-    { field: "phone", headerName: "טלפון", filter: 'agTextColumnFilter' },
-    {
-      field: "lessonNumber", headerName: "מספר שיעור", filter: 'agTextColumnFilter',
-      cellRenderer: (params: any) => {
-        return 'לחץ לפרטי שיעור ' + params.value;
-      },
-      onCellClicked: (event: any) => {
-        alert(`Clicked on lesson number: ${event.value}`);
-      }
-    },
-    { field: "price", headerName: "מחיר", filter: 'agNumberColumnFilter' },
-    { field: "isPaid", headerName: "שולם", filter: 'agbooleanColumnFilter' },
-    { field: "email", headerName: "אימייל", filter: 'agTextColumnFilter' },
+    }
+    ,
+    { field: "price", headerName: "מחיר", filter: "number" },
+    { field: "isPaid", headerName: "שולם", "filter": "agSetColumnFilter" },
+    { field: "email", headerName: "אימייל", filter: "agTextColumnFilter" },
   ];
 
 
