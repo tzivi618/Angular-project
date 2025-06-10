@@ -9,6 +9,7 @@
     text-align: center;
     display: inline-block;
     transition: background-color 0.3s ease; 
+<<<<<<< HEAD
     width: 30%;
     text-align: center;
 }
@@ -24,3 +25,15 @@
 .lesson-has-begun:hover{
     background-color: #abeaeb !important; 
 }
+=======
+}
+
+#lesson-details:hover {
+    background-color: #e04a4a; 
+}
+.lesson-has-begun {
+    background-color: #1cc5db !important; 
+    border: 1px solid #00796b  !important;
+    color: #004d40  !important;
+}
+>>>>>>> 501eae2940a2fcec45af3a5c3d5d627c924f13e9

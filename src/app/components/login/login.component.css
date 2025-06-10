@@ -13,12 +13,17 @@
 
 /* טופס */
 ::ng-deep form {
+<<<<<<< HEAD
   align-items: center;
   /* background: linear-gradient(135deg, #fff4e6, #f59d3f); */
+=======
+  background: linear-gradient(135deg, #fff4e6, #f59d3f);
+>>>>>>> 501eae2940a2fcec45af3a5c3d5d627c924f13e9
   border-radius: 20px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
   padding: 40px;
   width: 500px;
+<<<<<<< HEAD
   text-align: center;
    
   animation: fadeIn 0.6s ease-in-out;
@@ -26,6 +31,11 @@
 #loginForm{
   text-align: center;
 }
+=======
+  text-align: center; 
+  animation: fadeIn 0.6s ease-in-out;
+}
+>>>>>>> 501eae2940a2fcec45af3a5c3d5d627c924f13e9
 
 
 mat-form-field {
@@ -48,20 +58,22 @@ button {
   border-radius: 10px;
   font-size: 25px; 
   font-weight: bold;
-  /* background: linear-gradient(135deg, #cccbcb, #f8f7f7); מעבר צבעים כתום */
-  background-color: #cccbcb;
+
+  background: linear-gradient(135deg, #cccbcb, #9f9f9f); /* מעבר צבעים כתום */
   color: white;
   color: aqua;
-  transition: transform 0.2s ease, background 0.25s ease; /* אפקטים */
+  transition: transform 0.2s ease, background 0.3s ease; /* אפקטים */
 }
 
 button:hover {
   background: linear-gradient(135deg, rgb(159, 158, 158), rgb(99, 99, 99)); /* צבע כהה יותר כשעוברים על הכפתור */
   transform: scale(1.05);
 }
+
 mdc-button__label{
   color: black;
 }
+
 /* הודעות שגיאה */
 mat-error {
   font-size: 14px; 

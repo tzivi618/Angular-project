@@ -1,4 +1,6 @@
+
 <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" class="loginForm">
+
   <mat-form-field appearance="fill">
     <mat-label>אימייל  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="email"></mat-icon>    </mat-label>
     <input matInput formControlName="email" required>
@@ -21,5 +23,6 @@
     </mat-error>
   </mat-form-field>
 
-  <button mat-raised-button  type="submit">התחבר</button>
+
+  <button mat-raised-button color="primary" type="submit">התחבר</button>
 </form>

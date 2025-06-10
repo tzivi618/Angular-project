@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #lessons-container {
     width: 100%;
     text-align: center;
@@ -6,4 +7,12 @@ h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     font-size: xxx-large;
+=======
+.lessons-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 20px;  */
+    justify-content:center;
+    align-items: center;
+>>>>>>> 501eae2940a2fcec45af3a5c3d5d627c924f13e9
 }

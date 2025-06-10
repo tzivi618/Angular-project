@@ -61,7 +61,6 @@ export class LoginComponent {
       else {
         alert('אימייל או סיסמא לא נכונים');
       }
-      // clean the failds
     }
     else{
       alert("שגיאה");
